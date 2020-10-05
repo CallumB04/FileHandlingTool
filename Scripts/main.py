@@ -6,11 +6,9 @@ def exitprog():
     exit()
 
 def main():
-    
-    cwd = os.path.dirname(os.getcwd())
 
     while True: 
-        if mainmenu(cwd) == "exit":
+        if mainmenu() == "exit":
             exitprog()
 
 
