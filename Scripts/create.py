@@ -47,7 +47,8 @@ def createfiles():
                     name = filename[:x]
                     ext = filename[x:]
 
-                filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
+                try: filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
+                except: pass
 
         elif confirm.upper() == "N":
             return
@@ -58,7 +59,7 @@ def createfiles():
         print("=============================================================")
         print("\n")
         for i in range(0, 3):
-            print(f"Returning to main menu in {3-i} second[s]!")
+            print(f"Returning to main menu in {3-i} second[s]!", end="\r")
             time.sleep(1)
         print("=============================================================")
         return 0
