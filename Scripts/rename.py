@@ -1,6 +1,6 @@
 import os
 
-def renamefiles(cwd):
+def renamefiles():
     os.system("cls")
 
     print("=============================================================")

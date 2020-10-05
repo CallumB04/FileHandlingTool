@@ -1,6 +1,6 @@
 import os
 
-def deletefiles(cwd):
+def deletefiles():
     os.system("cls")
 
     print("=============================================================")
