@@ -50,19 +50,18 @@ def createfiles():
                 try: filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
                 except: pass
 
+            os.system("cls")
+            print("=============================================================")
+            print(f"{len(files)} file[s] created in the current directory: \n>> {os.path.dirname(os.getcwd())}")
+            print("=============================================================")
+            print("\n")
+            for i in range(0, 3):
+                print(f"Returning to main menu in {3-i} second[s]!", end="\r")
+                time.sleep(1)
+            print("=============================================================")
+            return 0
+
         elif confirm.upper() == "N":
             return
 
-        os.system("cls")
-        print("=============================================================")
-        print(f"{len(files)} file[s] created in the current directory: \n>> {os.path.dirname(os.getcwd())}")
-        print("=============================================================")
-        print("\n")
-        for i in range(0, 3):
-            print(f"Returning to main menu in {3-i} second[s]!", end="\r")
-            time.sleep(1)
-        print("=============================================================")
-        return 0
-
-   
-    ## open("<filename.extension>", "x") to create files
+        
