@@ -1,11 +1,11 @@
-import os
+import os, sys
 from rename import renamefiles
 from delete import deletefiles
 from create import createfiles
 
 def mainmenu():
-    try : os.system("cls")
-    except : os.system("clear")
+    if sys.platform == "win32" : os.system("cls")
+    elif sys.platform == "linux" : os.system("clear")
 
     print("=============================================================")
     print(f"What would you like to do in the current directory ({os.path.dirname(os.getcwd())})")

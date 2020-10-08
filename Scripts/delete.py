@@ -1,8 +1,8 @@
-import os, time
+import os, time, sys
 
 def deletefiles():
-    try : os.system("cls")
-    except : os.system("clear")
+    if sys.platform == "win32" : os.system("cls")
+    elif sys.platform == "linux" : os.system("clear")
     deletedcount = 0
 
     print("=============================================================")
@@ -26,8 +26,8 @@ def deletefiles():
 
     files = "".join(files).split("  ")
 
-    try : os.system("cls")
-    except : os.system("clear")
+    if sys.platform == "win32" : os.system("cls")
+    elif sys.platform == "linux" : os.system("clear")
 
     while True:
 
@@ -35,8 +35,8 @@ def deletefiles():
         confirm = str(input(f"Are you sure you would like to delete {len(files)} file[s] in the current directory: \n>> {os.path.dirname(os.getcwd())} \n\n[Y/N]"))
 
         if not confirm.upper() in ["Y", "N"]:
-            try : os.system("cls")
-            except : os.system("clear")
+            if sys.platform == "win32" : os.system("cls")
+            elif sys.platform == "linux" : os.system("clear")
             print("Invalid input. [Y/N]")
 
         if confirm.upper() == "Y":
@@ -57,8 +57,8 @@ def deletefiles():
                         deletedcount += 1
                 except: pass
 
-            try : os.system("cls")
-            except : os.system("clear")
+            if sys.platform == "win32" : os.system("cls")
+            elif sys.platform == "linux" : os.system("clear")
             print("=============================================================")
             print(f"{deletedcount} file[s] deleted in the current directory: \n>> {os.path.dirname(os.getcwd())}")
             print("=============================================================")
