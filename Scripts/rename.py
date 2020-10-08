@@ -1,7 +1,8 @@
 import os
 
 def renamefiles():
-    os.system("cls")
+    try : os.system("cls")
+    except : os.system("clear")
 
     print("=============================================================")
     print("                 -- File Renaming Tool --                    ")

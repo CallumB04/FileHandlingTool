@@ -4,7 +4,8 @@ from delete import deletefiles
 from create import createfiles
 
 def mainmenu():
-    os.system("cls")
+    try : os.system("cls")
+    except : os.system("clear")
 
     print("=============================================================")
     print(f"What would you like to do in the current directory ({os.path.dirname(os.getcwd())})")

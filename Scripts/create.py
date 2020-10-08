@@ -1,7 +1,8 @@
 import os, time
 
 def createfiles():
-    os.system("cls")
+    try : os.system("cls")
+    except : os.system("clear")
 
     print("=============================================================")
     print("                 -- File Creation Tool --                    ")
@@ -24,7 +25,8 @@ def createfiles():
 
     files = "".join(files).split("  ")
 
-    os.system("cls")
+    try : os.system("cls")
+    except : os.system("clear")
 
     while True:
 
@@ -32,7 +34,8 @@ def createfiles():
         confirm = str(input(f"Are you sure you would like to create {len(files)} file[s] in the current directory: \n>> {os.path.dirname(os.getcwd())} \n\n[Y/N]"))
 
         if not confirm.upper() in ["Y", "N"]:
-            os.system("cls")
+            try : os.system("cls")
+            except : os.system("clear")
             print("Invalid input. [Y/N]")
 
         if confirm.upper() == "Y":
@@ -50,7 +53,8 @@ def createfiles():
                 try: filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
                 except: pass
 
-            os.system("cls")
+            try : os.system("cls")
+            except : os.system("clear")
             print("=============================================================")
             print(f"{len(files)} file[s] created in the current directory: \n>> {os.path.dirname(os.getcwd())}")
             print("=============================================================")
