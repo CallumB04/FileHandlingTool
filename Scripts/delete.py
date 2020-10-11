@@ -12,7 +12,7 @@ def deletefiles():
     print("\n    Type 'Exit' at any time to return to the main menu!    ")
     print("=============================================================")
     print("  State all the name[s] of the file[s] and file extention[s] ")
-    print("  you would like to delete, seperated using a comma (, ) >>  ")
+    print("   you would like to delete, seperated into a list (, ) >>   ")
     print("\n     Files without an extension will not be deleted!       ")
     print("=============================================================")
     files = str(input(">> "))
@@ -53,7 +53,8 @@ def deletefiles():
 
                 try: 
                     if ext != "":
-                        os.remove(f"{os.path.dirname(os.getcwd())}\\{name}{ext}")
+                        if sys.platform == "win32": os.remove(f"{os.path.dirname(os.getcwd())}\\{name}{ext}")
+                        elif sys.platform == "linux": os.remove(f"{os.path.dirname(os.getcwd())}/{name}{ext}")
                         deletedcount += 1
                 except: pass
 

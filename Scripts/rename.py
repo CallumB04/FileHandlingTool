@@ -41,7 +41,8 @@ def renamefiles():
                 name = newFile[:x]
                 ext = newFile[x:]
 
-            os.rename(f"{os.path.dirname(os.getcwd())}\\{file}", f"{os.path.dirname(os.getcwd())}\\{name}{ext}")
+            if sys.platform == "win32": os.rename(f"{os.path.dirname(os.getcwd())}\\{file}", f"{os.path.dirname(os.getcwd())}\\{name}{ext}")
+            elif sys.platform == "linux": os.rename(f"{os.path.dirname(os.getcwd())}/{file}", f"{os.path.dirname(os.getcwd())}/{name}{ext}")
             
             print("=============================================================")
             print(f"Old file name >> {file}\nNew File name {name}{ext}")

@@ -11,7 +11,7 @@ def createfiles():
     print("\n    Type 'Exit' at any time to return to the main menu!    ")
     print("=============================================================")
     print("  State all the name[s] of the file[s] and file extention[s] ")
-    print("  you would like to create, seperated using a comma (, ) >>  ")
+    print("   you would like to create, seperated into a list (, ) >>   ")
     print("\n     Files without an extension will be made as a .txt     ")
     print("=============================================================")
     files = str(input(">> "))
@@ -50,7 +50,9 @@ def createfiles():
                     name = filename[:x]
                     ext = filename[x:]
 
-                try: filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
+                try: 
+                    if sys.platform == "win32": filecreate = open(f"{os.path.dirname(os.getcwd())}\\{name}{ext}", "x")
+                    elif sys.platform == "linux": filecreate = open(f"{os.path.dirname(os.getcwd())}/{name}{ext}", "x")
                 except: pass
 
             if sys.platform == "win32" : os.system("cls")
